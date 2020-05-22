@@ -3,13 +3,9 @@ layout: pattern
 title: Promise
 folder: promise
 permalink: /patterns/promise/
-pumlid: DOqv4i8m301xNW4FYDLJvIl2rYHYBDcZWtmVKr3jDZkxUw15IhyzM6lFHcdzVaPCVm8ONkNWEFELJbQ71ccKEWIuvuKhXJT-S6laVEWsCO9C7GHz2KmRmav0KVzUqgJCtsydROjV
 categories: Concurrency
 tags:
- - Java
- - Functional
  - Reactive
- - Difficulty-Intermediate
 ---
 
 ## Also known as
@@ -21,15 +17,16 @@ allows you to associate dependent promises to an asynchronous action's eventual 
 failure reason. Promises are a way to write async code that still appears as though it is executing 
 in a synchronous way.
 
+## Class diagram
 ![alt text](./etc/promise.png "Promise")
 
 ## Applicability
 Promise pattern is applicable in concurrent programming when some work needs to be done asynchronously
 and:
 
-* code maintainablity and readability suffers due to callback hell.
-* you need to compose promises and need better error handling for asynchronous tasks.
-* you want to use functional style of programming.
+* Code maintainability and readability suffers due to callback hell.
+* You need to compose promises and need better error handling for asynchronous tasks.
+* You want to use functional style of programming.
 
 
 ## Real world examples
@@ -44,4 +41,4 @@ and:
 ## Credits
 
 * [You are missing the point to Promises](https://gist.github.com/domenic/3889970)
-* [Functional style callbacks using CompleteableFuture](https://www.infoq.com/articles/Functional-Style-Callbacks-Using-CompletableFuture)
+* [Functional style callbacks using CompletableFuture](https://www.infoq.com/articles/Functional-Style-Callbacks-Using-CompletableFuture)

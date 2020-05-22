@@ -3,12 +3,9 @@ layout: pattern
 title: Interpreter
 folder: interpreter
 permalink: /patterns/interpreter/
-pumlid: JSf13eCm30NHgz034E-vZGaM62Kcih_BzQ6xxjv8yr6hBJT9RzC1Z5Y8dE-oAuvSCyJhPH13gLSdRNapsEdaBy-RXEus3mR4BQXpl21zVnykFmlgVvVqNaRszW00
 categories: Behavioral
 tags:
- - Java
- - Gang Of Four
- - Difficulty-Intermediate
+ - Gang of Four
 ---
 
 ## Intent
@@ -16,6 +13,7 @@ Given a language, define a representation for its grammar along
 with an interpreter that uses the representation to interpret sentences in the
 language.
 
+## Class diagram
 ![alt text](./etc/interpreter_1.png "Interpreter")
 
 ## Applicability
@@ -27,6 +25,7 @@ trees. The Interpreter pattern works best when
 * efficiency is not a critical concern. The most efficient interpreters are usually not implemented by interpreting parse trees directly but by first translating them into another form. For example, regular expressions are often transformed into state machines. But even then, the translator can be implemented by the Interpreter pattern, so the pattern is still applicable
 
 ## Real world examples
+
 * [java.util.Pattern](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
 * [java.text.Normalizer](http://docs.oracle.com/javase/8/docs/api/java/text/Normalizer.html)
 * All subclasses of [java.text.Format](http://docs.oracle.com/javase/8/docs/api/java/text/Format.html)

@@ -3,13 +3,9 @@ layout: pattern
 title: Command
 folder: command
 permalink: /patterns/command/
-pumlid: DSgn4OCm30NGLM00h3xR25i7vYpXaxx2-g59zugtTgiZcwIFvGHcV8YSdt9qdBbdYDVR88PIRwK-yc6mqyLVtff4FsoR38XRa7Aye3SgMoD1_RkaQvcfumS0
 categories: Behavioral
 tags:
- - Java
- - Gang Of Four
- - Difficulty-Intermediate
- - Functional
+ - Gang of Four
 ---
 
 ## Also known as
@@ -20,6 +16,7 @@ Encapsulate a request as an object, thereby letting you
 parameterize clients with different requests, queue or log requests, and
 support undoable operations.
 
+## Class diagram
 ![alt text](./etc/command.png "Command")
 
 ## Applicability
@@ -40,6 +37,7 @@ Use the Command pattern when you want to
 ## Real world examples
 
 * [java.lang.Runnable](http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
+* [org.junit.runners.model.Statement](https://github.com/junit-team/junit4/blob/master/src/main/java/org/junit/runners/model/Statement.java)
 * [Netflix Hystrix](https://github.com/Netflix/Hystrix/wiki)
 * [javax.swing.Action](http://docs.oracle.com/javase/8/docs/api/javax/swing/Action.html)
 

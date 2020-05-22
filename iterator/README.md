@@ -3,12 +3,9 @@ layout: pattern
 title: Iterator
 folder: iterator
 permalink: /patterns/iterator/
-pumlid: FSV13OGm30NHLg00uljsOu85HeaJsTzB-yjfBwCtgrfjUKXwMovWneV8-IcduiezGxmEWnXA7PsqvSDWfvk_l1qIUjes6H2teCxnWlGDOpW9wdzAUYypU_i1
 categories: Behavioral
 tags:
- - Java
- - Difficulty-Beginner
- - Gang Of Four
+ - Gang of Four
 ---
 
 ## Also known as
@@ -18,6 +15,7 @@ Cursor
 Provide a way to access the elements of an aggregate object
 sequentially without exposing its underlying representation.
 
+## Class diagram
 ![alt text](./etc/iterator_1.png "Iterator")
 
 ## Applicability

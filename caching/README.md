@@ -3,11 +3,8 @@ layout: pattern
 title: Caching
 folder: caching
 permalink: /patterns/caching/
-pumlid: DSRB4OKm2030LhG0m_rrWyWaE0bc-6ZxpujxsbMKUXwSrfSMCVq7OFYKAj5oJsUZIuCr2bq3fEU3WGOdthWTx59rcnZ1fWu3_GqGKXEjm47VIzeeCqV_0m00
-categories: Other
+categories: Behavioral
 tags:
- - Java
- - Difficulty-Intermediate
  - Performance
 ---
 
@@ -16,6 +13,7 @@ To avoid expensive re-acquisition of resources by not releasing
 the resources immediately after their use. The resources retain their identity, are kept in some
 fast-access storage, and are re-used to avoid having to acquire them again.
 
+## Class diagram
 ![alt text](./etc/caching.png "Caching")
 
 ## Applicability

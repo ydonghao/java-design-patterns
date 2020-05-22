@@ -3,12 +3,8 @@ layout: pattern
 title: Lazy Loading
 folder: lazy-loading
 permalink: /patterns/lazy-loading/
-pumlid: LSXB3W8X303Gg-W1e7jlqu66gIc5zED4JwzRTo_lpjeaEwN9xOpO_W0mlEhWEFD89sjBWpHgMnDOyi90WoU-i7Ho7besHf2fmqJ_0GG_xo8BE-i0YlONDMtMdLE-
-categories: Other
+categories: Idiom
 tags:
- - Java
- - Difficulty-Beginner
- - Idiom
  - Performance
 ---
 
@@ -18,6 +14,7 @@ initialization of an object until the point at which it is needed. It can
 contribute to efficiency in the program's operation if properly and
 appropriately used.
 
+## Class diagram
 ![alt text](./etc/lazy-loading.png "Lazy Loading")
 
 ## Applicability

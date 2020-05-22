@@ -3,12 +3,10 @@ layout: pattern
 title: Mediator
 folder: mediator
 permalink: /patterns/mediator/
-pumlid: FSV14SCm20J0Lk82BFxf1akCJKOW3JhizfDNVhkRUktP9AE_Bc2kDr7mKqx5bKSkYJeSuYXr66dFXy517xvvRxBqz7qo8E6BZDSFPDAKCO84zP-IOMMczIy0
 categories: Behavioral
 tags:
- - Java
  - Gang Of Four
- - Difficulty-Intermediate
+ - Decoupling
 ---
 
 ## Intent
@@ -16,6 +14,7 @@ Define an object that encapsulates how a set of objects interact.
 Mediator promotes loose coupling by keeping objects from referring to each
 other explicitly, and it lets you vary their interaction independently.
 
+## Class diagram
 ![alt text](./etc/mediator_1.png "Mediator")
 
 ## Applicability

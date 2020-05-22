@@ -3,12 +3,9 @@ layout: pattern
 title: Memento
 folder: memento
 permalink: /patterns/memento/
-pumlid: DSgn4OCm30NGLM00h3xR2AC3SvRiaxx2-g59zugtDgiz3qdlomNC-10vF-Lik7BF4A_388PIXrBh-J3OwUOlRuT4EssR38XRa7Ay81Lz_o11_RkaQvcf_GS0
 categories: Behavioral
 tags:
- - Java
- - Gang Of Four
- - Difficulty-Intermediate
+ - Gang of Four
 ---
 
 ## Also known as
@@ -18,6 +15,7 @@ Token
 Without violating encapsulation, capture and externalize an
 object's internal state so that the object can be restored to this state later.
 
+## Class diagram
 ![alt text](./etc/memento.png "Memento")
 
 ## Applicability

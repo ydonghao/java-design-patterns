@@ -3,12 +3,9 @@ layout: pattern
 title: Composite
 folder: composite
 permalink: /patterns/composite/
-pumlid: HSf13eCm30NHgy01YFUzZGaM62LEP7-NwvTTT_EaMTLgoqFIst81Cpv4payv5LVk6U9r6CHGwkYaBHy6EztyvUsGqDEsoO2u1NMED-WTvmY5aA3-LT9xcTdR3m00
 categories: Structural
 tags:
- - Java
- - Gang Of Four
- - Difficulty-Intermediate
+ - Gang of Four
 ---
 
 ## Intent
@@ -16,7 +13,147 @@ Compose objects into tree structures to represent part-whole
 hierarchies. Composite lets clients treat individual objects and compositions
 of objects uniformly.
 
-![alt text](./etc/composite_1.png "Composite")
+## Explanation
+
+Real world example
+
+> Every sentence is composed of words which are in turn composed of characters. Each of these objects is printable and they can have something printed before or after them like sentence always ends with full stop and word always has space before it
+
+In plain words
+
+> Composite pattern lets clients treat the individual objects in a uniform manner.
+
+Wikipedia says
+
+> In software engineering, the composite pattern is a partitioning design pattern. The composite pattern describes that a group of objects is to be treated in the same way as a single instance of an object. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
+
+**Programmatic Example**
+
+Taking our sentence example from above. Here we have the base class and different printable types
+
+```java
+public abstract class LetterComposite {
+
+  private List<LetterComposite> children = new ArrayList<>();
+
+  public void add(LetterComposite letter) {
+    children.add(letter);
+  }
+
+  public int count() {
+    return children.size();
+  }
+
+  protected void printThisBefore() {
+  }
+
+  protected void printThisAfter() {
+  }
+
+  public void print() {
+    printThisBefore();
+    children.forEach(LetterComposite::print);
+    printThisAfter();
+  }
+}
+
+public class Letter extends LetterComposite {
+
+  private char character;
+
+  public Letter(char c) {
+    this.character = c;
+  }
+
+  @Override
+  protected void printThisBefore() {
+    System.out.print(character);
+  }
+}
+
+public class Word extends LetterComposite {
+
+  public Word(List<Letter> letters) {
+    letters.forEach(this::add);
+  }
+
+  public Word(char... letters) {
+    for (char letter : letters) {
+      this.add(new Letter(letter));
+    }
+  }
+
+  @Override
+  protected void printThisBefore() {
+    System.out.print(" ");
+  }
+}
+
+public class Sentence extends LetterComposite {
+
+  public Sentence(List<Word> words) {
+    words.forEach(this::add);
+  }
+
+  @Override
+  protected void printThisAfter() {
+    System.out.print(".");
+  }
+}
+```
+
+Then we have a messenger to carry messages
+
+```java
+public class Messenger {
+
+  LetterComposite messageFromOrcs() {
+
+    var words = List.of(
+        new Word('W', 'h', 'e', 'r', 'e'),
+        new Word('t', 'h', 'e', 'r', 'e'),
+        new Word('i', 's'),
+        new Word('a'),
+        new Word('w', 'h', 'i', 'p'),
+        new Word('t', 'h', 'e', 'r', 'e'),
+        new Word('i', 's'),
+        new Word('a'),
+        new Word('w', 'a', 'y')
+    );
+
+    return new Sentence(words);
+
+  }
+
+  LetterComposite messageFromElves() {
+
+    var words = List.of(
+        new Word('M', 'u', 'c', 'h'),
+        new Word('w', 'i', 'n', 'd'),
+        new Word('p', 'o', 'u', 'r', 's'),
+        new Word('f', 'r', 'o', 'm'),
+        new Word('y', 'o', 'u', 'r'),
+        new Word('m', 'o', 'u', 't', 'h')
+    );
+
+    return new Sentence(words);
+
+  }
+
+}
+```
+
+And then it can be used as
+
+```java
+var orcMessage = new Messenger().messageFromOrcs();
+orcMessage.print(); // Where there is a whip there is a way.
+var elfMessage = new Messenger().messageFromElves();
+elfMessage.print(); // Much wind pours from your mouth.
+```
+
+## Class diagram
+![alt text](./etc/composite.urm.png "Composite class diagram")
 
 ## Applicability
 Use the Composite pattern when
